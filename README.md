@@ -34,4 +34,4 @@ Section content is regularly updated with JavaScript, so these sections have bee
 ## Note on Rights and Permissions
 All image assets used are either public domain or licensed under the terms of CC0. This project uses the TypeFic framework, which is licensed by Benny Mattis under the MIT license. 
 
-To the extent possible under law, Benny Mattis has waived all copyright and related or neighboring rights to Bill’s Passage. This work is published from: United States.
+Bill's Passage by Benny Mattis is marked with CC0 1.0 Universal.
