@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Merriweather Sans", Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+}
+body {
+    background-color: black;
+}
+a {
+    color: white;
+}
+.support-indicator, #text, button, p {
+    border: .25em solid rgb(100, 0, 0);
+    background-color: rgb(0, 0, 100);
+    color: lightgrey;
+    padding: 1em;
+    text-align: center;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+#support {
+    display: inline-block;
+    grid-area: hud;
+}
+.support-indicator {
+    display: inline-block;
+    margin: .25em;
+}
+#text {
+    display: block;
+}
+#buttons {
+    display: block;
+    text-align: center;
+}
+button {
+    display: inline-block;
+    border-width: .5em;
+    border-style: outset;
+    margin: .5em;
+}
+button:active {
+    border-style: inset;
+}
+#status {
+    background-size: cover;
+    background-position: 50% 50%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "hud interlocutor";
+}
+#interlocutor-container {
+    grid-area: interlocutor;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+#interlocutor {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    display: inline-block;
+    height: 8em;
+    width: 8em;
+}
+#status, #interlocutor {
+    transition-property: background-image;
+    transition-duration: .5s;
+    transition-delay: 0;
+    transition-timing-function: ease
+}

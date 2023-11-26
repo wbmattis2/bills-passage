@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+Bill's Passage.
+Developed by Benny Mattis.
+
+image sources:
+male silhouette (CC0): https://pixabay.com/vectors/cranium-head-human-male-man-1299985/
+female silhouette 1 (CC0): https://pixabay.com/vectors/woman-head-afro-silhouette-profile-308590/
+female silhouette 2 (CC0): https://pixabay.com/vectors/female-girl-head-silhouette-woman-1298955/
+neutral silhouette (CC0): https://pixabay.com/vectors/female-silhouette-male-silhouette-36177/
+scroll (CC0): https://pixabay.com/vectors/scroll-parchment-paper-note-bill-35683/
+senate (Public Domain): https://commons.wikimedia.org/wiki/File:United_States_Senate_Floor.jpg
+house (Public Domain): https://commons.wikimedia.org/wiki/File:United_States_House_of_Representatives_chamber.jpg
+capitol building (Public Domain): https://commons.wikimedia.org/wiki/File:United_States_Capitol_(Winter).jpg
+
+CC0: To the extent possible under law, Benny Mattis has waived all copyright and related or neighboring rights to Bill’s Passage. This work is published from: United States.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill's Passage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="status" aria-live="polite" aria-label="status">
+        <div id="support" aria-label="resources">
+            <div id="days" class="support-indicator"></div><br/>
+            <div id="indSupp" class="support-indicator"></div><br/>
+            <div id="pubSupp" class="support-indicator"></div><br/>
+            
+        </div>
+        <div id="interlocutor-container"  aria-label="current representative">
+            <div id="interlocutor" aria-hidden="true"></div>
+            <div id="conSupp" class="support-indicator"></div>
+        </div>
+    </section>
+    <section id="text" aria-live="polite" aria-label="game prompt"></section>
+    <section id="buttons" aria-live="polite" aria-label="player responses"></section>
+    <script src="bundle.js"></script>
+</body>
+</html>
