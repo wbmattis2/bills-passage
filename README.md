@@ -1,6 +1,6 @@
 # Bill's Passage
 ## Description
-Bill’s Passage is a lightweight choice-driven resource management game intended to serve as an educational resource about the process by which bills are passed into law in the United States Federal Government. This game was developed by Benny Mattis in response to the Library of Congress Friends’ Choice Civics Video Game Challenge of 2023.
+Bill’s Passage is a lightweight choice-driven resource management game intended to serve as an educational resource about the process by which bills are passed into law in the United States Federal Government. This game was developed by Benny Mattis in response to the Library of Congress Friends’ Choice Civics Video Game Challenge of 2023. It was inspired by a game enthusiast who wished to remain anonymous.
 
 Players play as Bill, who aims to join his predecessors in the halls of history by being passed into law. One of these predecessors offers Bill guidance as he garners the support of elected representatives in the House of Representatives, the Senate, and the White House.
 
