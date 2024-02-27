@@ -106,7 +106,7 @@ var sampleBook = {
     bookChapters: {
         'select_mode': {
             chapterPages: [
-                'Welcome to Bill\'s Passage!',
+                'Welcome to Bill\'s Passage, a computer game where you can help a bill get passed into law through the United States Federal Government.',
                 '<a href="https://www.loc.gov/collections/national-jukebox/about-this-collection/" target="_blank">Click here to play background music from the National Jukebox in a new tab.</a>',
                 'Please select a mode of play.'
             ],
@@ -1249,10 +1249,21 @@ var indSuppDiv = document.getElementById('indSupp');
 var pubSuppDiv = document.getElementById('pubSupp');
 var conSuppDiv = document.getElementById('conSupp');
 var daysDiv = document.getElementById('days');
+var locDiv = document.getElementById('location');
 var interlocutorDiv = document.getElementById('interlocutor');
 var statusDiv = document.getElementById('status');
 var tfOut = tf.read();
 var text = String(tfOut.text);
+var hideSuppDiv = function() {
+    indSuppDiv.style.visibility = 'hidden';
+    pubSuppDiv.style.visibility = 'hidden';
+    daysDiv.style.visibility = 'hidden';
+}
+var unhideSuppDiv = function() {
+    indSuppDiv.style.visibility = 'visible';
+    pubSuppDiv.style.visibility = 'visible';
+    daysDiv.style.visibility = 'visible';
+}
 var refresh = function () {
     buttonDiv.innerHTML = '';
     textP.innerHTML = text;
@@ -1273,21 +1284,47 @@ var refresh = function () {
         else if (supportLevel < 80) {interestLevel ='very interested in supporting you';}
         else if (supportLevel < 90) {interestLevel ='committed to supporting you';}
         else {interestLevel ='deeply committed to supporting you';}
-        suppDiv.style.visibility = 'visible';
+        unhideSuppDiv();
         conSuppDiv.innerText = currentRepTitle + ' ' + currentRepName + ': ' + interestLevel;
-        conSuppDiv.style.visibility = 'visible';
+        conSuppDiv.style.opacity = 1;
         statusDiv.style.backgroundImage = 'url(./assets/' + currentRepTitle + '.jpg)';
+        switch (currentRepTitle) {
+            case 'Representative':
+                locDiv.innerText = 'Location: House of Representatives';
+                break;
+            case 'Senator':
+                locDiv.innerText = 'Location: Senate Floor';
+                break;
+            case 'President':
+                locDiv.innerText = 'Location: President\'s Desk';
+                break;
+            default:
+                break;
+        }
         interlocutorDiv.style.backgroundImage = currentRepObject['shape'];
         interlocutorDiv.style.backgroundColor = currentRepObject['color'];
     }
     else {
-        suppDiv.style.visibility = 'hidden';
-        conSupp.style.visibility = 'hidden';
+        hideSuppDiv();
         if (tf.gameState.currentVariables.cutscene == 'ancestor') {
             statusDiv.style.backgroundImage = 'url(./assets/capitol.jpg)';
+            locDiv.style.visibility = 'visible';
+            locDiv.innerText = 'Location: Outside the Capitol';
+            conSupp.style.opacity = 1;
+            conSuppDiv.innerText = 'Bill\'s PREDECESSOR';
         }
         else {
             statusDiv.style.backgroundImage = 'url(./assets/stars.png)';
+            locDiv.style.visibility = 'hidden';
+            if (tf.gameState.currentVariables.cutscene == 'Bill') {
+                conSupp.style.opacity = 1;
+                conSuppDiv.innerText = 'Bill';
+            }
+            else {
+                conSupp.style.opacity = 1;
+                conSuppDiv.innerText = 'Welcome to Bill\'s Passage';
+            }
+            
         }
         interlocutorDiv.style.backgroundImage = 'url(./assets/'+tf.gameState.currentVariables.cutscene+'.png)';
         interlocutorDiv.style.backgroundColor = 'transparent';

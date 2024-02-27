@@ -9,6 +9,10 @@
 body {
     background-color: black;
 }
+h1 {
+    visibility: hidden;
+    position: fixed;
+}
 a {
     color: white;
 }
